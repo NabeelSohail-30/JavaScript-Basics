@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 02 - innerHTML</title>
+</head>
+
+<body>
+    <h1 id="heading01">This is Heading</h1>
+    <h2 id="heading02"></h2>
+    <p id="para01" class="para">This is Paragraph
+        <span>My Span 01</span>
+        <img src="images/ai.jpg" alt="">
+    </p>
+    <p id="para02" class="para"></p>
+    <div id="div01">This is div</div>
+    <span id="span01">This is span</span>
+    <a href="#" id="link01">This is anchor tag</a>
+    <label for="" id="label01">This is label</label>
+
+    <input type="submit" value="This is Input submit" id="submit01">
+    <input type="text" name="" id="text01" value="This is Input text">
+
+    <script>
+        document.getElementById("heading02").innerHTML = 'This is Heading 02';
+        document.getElementById("heading01").innerHTML = '';
+        //document.getElementsByClassName("para")[0].innerHTML='Hello Java';
+        var age;
+        document.getElementById("div01").innerHTML = age;
+        document.getElementById("span01").innerHTML = (5 ** 2);
+    </script>
+</body>
+
+</html>

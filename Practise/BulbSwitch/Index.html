@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Bulb On Off</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .img-box img {
+            width: 400px;
+            height: 800px;
+            display: flex;
+            margin: 0px auto;
+        }
+
+        .on-off{
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button{
+            width: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .container {
+            margin: 90px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <div class="on-off">
+                    <button onclick="BulbOn();">On</button>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div class="img-box">
+                    <a href="#"><img src="img/1.png" alt="" id="bulb"></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="on-off">
+                    <button onclick="BulbOff();">Off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function BulbOn(){
+            var TargetElement = document.getElementById("bulb");
+            var TargetImgSrc = TargetElement.getAttribute("src");
+
+            if (TargetImgSrc == 'img/2.png')
+            {
+                TargetElement.setAttribute('src', 'img/1.png');
+            }
+        }
+
+        function BulbOff(){
+            var TargetElement = document.getElementById("bulb");
+            var TargetImgSrc = TargetElement.getAttribute("src");
+
+            if (TargetImgSrc == 'img/1.png')
+            {
+                TargetElement.setAttribute('src', 'img/2.png');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

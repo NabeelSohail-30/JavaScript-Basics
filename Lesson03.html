@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 03 - Loops</title>
+</head>
+
+<body>
+    <script>
+        document.write('Loop Started');
+        document.write('<br>Loop Ended');
+        document.write('<br><br><br><br>');
+        var counter = 1;
+        for (counter = 1; counter <= 10; counter++) {
+            document.write(counter);
+        }
+    </script>
+    <h1 id="loop"></h1>
+    <br>
+    <br>
+    <br>
+    <script>
+        //window.alert(document.getElementById("loop").innerHTML);
+        var counter = 1;
+        document.write('Loop Started');
+        for (counter = 1; counter <= 10; counter++) {
+            document.getElementById("loop").innerHTML = document.getElementById("loop").innerHTML + counter + "<br>";
+            document.write('<br><br><br><br>');
+        }
+        document.write('Loop Ended');
+    </script>
+    <h1 id="loop2"></h1>
+    <script>
+        var loopval="";
+        var counter=1;
+        for (;counter<=10;counter++)
+        {
+            loopval += counter + '<br>';
+        }
+        document.getElementById("loop2").innerHTML = loopval;
+    </script>
+</body>
+
+</html>

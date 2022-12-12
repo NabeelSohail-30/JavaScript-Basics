@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>CSS Methods</title>
+</head>
+
+<body>
+    <p class="text-primary text-center mt-5 font-weight-bold" id="para01">Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsam impedit magnam in error id, rerum ipsa. Nisi dolorem expedita cum, nulla sunt
+        repellendus consequatur cupiditate numquam reprehenderit harum aspernatur officiis.</p>
+
+    <script>
+        var TargetElement = document.querySelector("#para01");
+        var TargetClassValue = TargetElement.getAttribute('class');
+
+        TargetClassValue = TargetClassValue.replace('font-weight-bold', '');
+
+        TargetElement.setAttribute("class", (TargetClassValue + ' bg-warning'));
+    </script>
+
+    <h2>Get / Set CSS Style Methods</h2>
+    <ul>
+        <li>style</li>
+        <li>className</li>
+        <li>classList</li>
+        <li></li>
+    </ul>
+
+    <h3>style Method</h3>
+    <p>Get or Set HTML Style attributes.</p>
+
+    <p style="border: 2px dashed red;" id="para02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        voluptatum sapiente tenetur veritatis, blanditiis maiores veniam amet sit? Iste aperiam sunt quaerat omnis neque
+        tempora maxime perspiciatis voluptatem molestias laudantium!</p>
+    <button onclick="GetStyle();">Click to get Style Attr</button>
+    <button onclick="SetStyle();">Set Text Color</button>
+    <button onclick="DisplayHide();">Hide Paragraph</button>
+    <button onclick="DisplayShow();">Show Paragraph</button>
+
+    <script>
+        function GetStyle() {
+            var TargetElement = document.querySelector("#para02");
+            window.alert('boder:' + TargetElement.style.border);
+            window.alert('color:' + TargetElement.style.color);
+        }
+
+        function SetStyle() {
+            var TargetElement = document.querySelector("#para02");
+
+            TargetElement.style.color = 'blue';
+            TargetElement.style.backgroundColor = 'lightgrey';
+        }
+
+        function DisplayHide() {
+            var TargetElement = document.querySelector("#para02");
+            TargetElement.style.display = 'none';
+        }
+
+        function DisplayShow() {
+            var TargetElement = document.querySelector("#para02");
+            TargetElement.style.display = 'block';
+        }
+    </script>
+
+    <br>
+    <br>
+    <h3>className - Overwrite existing Classes, Returns List of Classes as String</h3>
+
+    <p id="para03" class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        voluptatum sapiente tenetur veritatis, blanditiis maiores veniam amet sit? Iste aperiam sunt quaerat omnis neque
+        tempora maxime perspiciatis voluptatem molestias laudantium!</p>
+    <button onclick="GetClass();">Get Class Names</button>
+    <button onclick="SetClass();">Set Class Names</button>
+
+    <script>
+        function GetClass() {
+            var TargetElement = document.querySelector("#para03");
+            window.alert('class = ' + TargetElement.className);
+        }
+
+        function SetClass() {
+            var TargetElement = document.querySelector("#para03");
+
+            TargetElement.className = 'text-primary bg-secondary';
+        }
+    </script>
+
+    <br>
+    <br>
+    <h3>classList - Returns List of Classes as an Object</h3>
+
+    <p id="para04" class="text-center text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        voluptatum sapiente tenetur veritatis, blanditiis maiores veniam amet sit? Iste aperiam sunt quaerat omnis neque
+        tempora maxime perspiciatis voluptatem molestias laudantium!</p>
+    <button onclick="GetClassList();">Get Class List</button>
+    <button onclick="SetClassList();">Set Class List</button>
+    <button onclick="AddClass();">Add Class</button>
+    <button onclick="RemoveClass();">Remove Class</button>
+    <button onclick="ToggleClass();">Toggle Class</button>
+
+    <script>
+        function GetClassList() {
+            var TargetElement = document.querySelector("#para04");
+            //console.table(TargetElement.classList);
+            window.alert(TargetElement.classList.value);
+
+            /*for (var Index = 0; Index < TargetElement.classList.length; Index++) {
+                document.write(TargetElement.classList[Index] + '<br>');
+            }*/
+
+        }
+
+        function SetClassList() {
+            var TargetElement = document.querySelector("#para04");
+
+            TargetElement.classList.value = 'text-primary bg-secondary font-weight-bold';
+        }
+
+        function AddClass() {
+            var TargetElement = document.querySelector("#para04");
+
+            TargetElement.classList.add('bg-primary');
+            TargetElement.classList.add('font-weight-bold');
+            TargetElement.classList.add('text-warning', 'p-4');
+        }
+
+        function RemoveClass() {
+            var TargetElement = document.querySelector("#para04");
+
+            TargetElement.classList.remove('p-4');
+        }
+
+        function ToggleClass() {
+            var TargetElement = document.querySelector("#para04");
+
+            TargetElement.classList.toggle('d-none');
+        }
+    </script>
+</body>
+
+</html>

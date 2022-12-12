@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Events</title>
+</head>
+
+<body>
+    <h1>Events</h1>
+    <ul>
+        <li>on[EventName] - on elements event attribute (onclick) - cannot use same event multiple time</li>
+        <li>DOM Event Property - TargetElement.on[EventName]=FunctionName - cannot use same event multiple time</li>
+        <li>addEventListener / removeEventListener (IE Vs9 and above)</li>
+        <span>ElementId.addEventListener(eventName, handler/functionName, phase)</span>
+        <span>ElementId.removeEventListener(eventName, handler/functionName, phase)</span>
+    </ul>
+
+    <h3>With Attribute Event</h3>
+    <div>
+        <button id="btn02" onclick="DisplaySum();" onclick="DisplayProduct();">Click Here Once</button>
+    </div>
+
+    <h3>With DOM Event Property</h3>
+    <div>
+        <button id="btn01">Click Here Once</button>
+    </div>
+
+
+    <script>
+        document.getElementById("btn01").onclick = DisplaySum;
+        document.getElementById("btn01").onclick = DisplayProduct;
+
+        function DisplaySum() {
+            var num1 = 10,
+                num2 = 30,
+                sum = num1 + num2;
+
+            window.alert(sum);
+        }
+
+        function DisplayProduct() {
+            window.alert('Product Method');
+        }
+    </script>
+
+
+    <h3>With DOM Event and attribute event</h3>
+    <span>Attribute event overrides the DOM Event Property</span>
+    <div>
+        <button id="btn03" onclick="DisplayPr();">Click Here Once</button>
+    </div>
+
+
+    <script>
+        document.getElementById("btn01").onclick = DisplaySum2;
+
+        function DisplaySum2() {
+            var num1 = 20,
+                num2 = 50,
+                sum = num1 + num2;
+
+            window.alert('Sum = ' + sum);
+        }
+
+        function DisplayPr() {
+            var num1 = 2,
+                num2 = 5,
+                sum = num1 * num2;
+
+            window.alert('Product = ' + sum);
+        }
+    </script>
+
+    <h3>addEventListener</h3>
+    <div>
+        <button id="btn04">Click Here Once</button>
+    </div>
+
+    <script>
+        btn04.addEventListener('mouseover', ChangeBg, false)
+        btn04.addEventListener('mouseout', ChangeBgDefault, false)
+
+        function ChangeBg() {
+            //addEventListener Method passes the object name to the function on which event occurs. This Object can be accessed using [this] keyword. 
+            this.style.backgroundColor = 'green';
+            document.querySelector("#btn04").style.color = 'yellow';
+        }
+
+        function ChangeBgDefault() {
+            document.querySelector("#btn04").style.backgroundColor = 'white';
+            document.querySelector("#btn04").style.color = 'black';
+        }
+    </script>
+
+    <h3>addEventListener</h3>
+    <span>calling the same event multiple times (supports multiple same events)</span>
+    <div>
+        <button id="btn05">Click Here Once</button>
+    </div>
+
+    <script>
+        btn05.addEventListener('click', ChangeBg2, false)
+        btn05.addEventListener('click', ChangeBgDefault2, false)
+
+        function ChangeBg2() {
+            //addEventListener Method passes the object name to the function on which event occurs. This Object can be accessed using [this] keyword. 
+            window.alert('ChangeBg2 Called');
+        }
+
+        function ChangeBgDefault2() {
+            window.alert('ChangeBgDefault2 Called');
+        }
+    </script>
+
+    <h3>With DOM Event and attribute event and addEventListener</h3>
+    <span></span>
+    <div>
+        <button id="btn07" onclick="AttrEvent();">Click Here Once</button>
+        <button id="btn08" onclick="RemoveEventBtn07();">Remove Event Listener</button>
+        <button id="btn09" onclick="RemoveDomEvent();">Remove DOM Event</button>
+    </div>
+
+    <script>
+        document.getElementById("btn07").onclick = DomEvent;
+        btn07.addEventListener('click', addEvent, false);
+
+        function AttrEvent() {
+            window.alert('Attribute Event Fired');
+        }
+
+        function DomEvent() {
+            window.alert('DOM Event Fired');
+        }
+
+        function addEvent() {
+            window.alert('Add Event Listener Fired');
+        }
+
+        function RemoveEventBtn07(){
+            btn07.removeEventListener('click', addEvent, false);
+        }
+
+        function RemoveDomEvent(){
+            document.getElementById("btn07").onclick = '';
+        }
+    </script>
+</body>
+
+</html>

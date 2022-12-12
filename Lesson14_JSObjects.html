@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <h1>Java Script Objects</h1>
+    <p>JS Objects are similar as Classes in Object Oriented Programming used in C#, VB.Net, etc. Objects/Classes are the
+        Object which contains Variables, Arrays, Properties, Methods/Functions and Events.</p>
+
+    <h2>Creating Object in JS</h2>
+    <p>var Students={}</p>
+
+    <h3>Get Value Example</h3>
+    <script>
+        var Students = {
+            //Creating Properties
+            StdName: 'Nabeel',
+            StdFatherName: 'Sohail',
+            Hobbies: ['Sports', 'Reading Books', 'Designing', 'Teaching'],
+            HobbiesLength: function () {
+                return this.Hobbies.length;
+            },
+            GetFullName: function () {
+                //return Students.StdName + ' ' + Students.StdFatherName;
+                //or
+                return this.StdName + ' ' + this.StdFatherName;
+            },
+        };
+
+        document.write('Object = ' + Students);
+        document.write('<br>' + Students.StdName);
+        document.write('<br>' + Students.StdFatherName);
+        document.write('<br>' + Students.DateOfBirth);
+        document.write('<br>' + Students.Hobbies);
+        document.write('<br>' + Students.HobbiesLength());
+        document.write('<br>' + Students.GetFullName());
+        console.log(Students);
+    </script>
+
+    <h3>Set Values Example</h3>
+    <script>
+        Students.StdName = 'Sohail Habib';
+        Students.DateOfBirth = '06-05-1995';
+        Students.StdFatherName = 'Abdul Habib';
+        Students.Hobbies = ['Gaming', 'Web Development', 'Teaching'];
+
+        document.write(Students.StdName);
+        document.write('<br>' + Students.StdFatherName);
+        document.write('<br>' + Students.DateOfBirth);
+        document.write('<br>' + Students.Hobbies);
+        document.write('<br>' + Students.HobbiesLength());
+        document.write('<br>' + Students.GetFullName());
+    </script>
+
+    <h2>Creating Empty Object in JS</h2>
+    <p>var Students=new Object</p>
+
+    <h3>Example</h3>
+    <script>
+        var Employees = new Object;
+
+        Employees.EmpName='Rashid';
+        Employees.EmpSalary=2500;
+
+        document.write('<br>Name = ' + Employees.EmpName);
+        document.write('<br>Salary = ' + Employees.EmpSalary);
+
+        document.write('<h3>Another Method to Access Object Property by using Property Name in [] instead of period</h3>');
+        document.write('<br>Name = ' + Employees['EmpName']);
+        document.write('<br>Salary = ' + Employees['EmpSalary']);
+    </script>
+
+    <h3>For/In Loop</h3>
+    <script>
+        for (var key in Students) {
+            if(typeof(Students[key]) != 'function'){
+                document.write(key + ' = ' + Students[key] + ' --> ' + typeof(Students[key]) +'<br>');
+            }
+        }
+    </script>
+</body>
+
+</html>

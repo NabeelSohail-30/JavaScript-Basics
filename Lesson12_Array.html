@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <h1>Creating an Array</h1>
+    <script>
+        function CreateArray01() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 87, 90];
+
+            document.write(Fruits);
+            document.write('<br>' + Fruits[1]);
+
+            document.write('<ul>');
+            for (var counter = 0; counter <= 5; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+
+            document.write(Fruits[4] + Fruits[5]);
+        }
+
+        document.write('<h1>Method 01</h1>');
+        CreateArray01();
+
+        function CreateArray02() {
+            var Fruits = new Array; //new array created of unlimited length
+
+            Fruits[0] = 'Grapes';
+            Fruits[1] = 'Melon';
+            Fruits[2] = 'Kiwi';
+            Fruits[3] = 'Orange';
+
+            document.write(Fruits);
+            document.write('<br>' + Fruits[1]);
+
+            document.write('<ul>');
+            for (var counter = 0; counter <= 3; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+
+        }
+
+        document.write('<h1>Method 02</h1>');
+        CreateArray02();
+
+        function CreateArray03() {
+            var Fruits = new Array('Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Melon');
+
+            document.write(Fruits);
+            document.write('<br>' + Fruits[1]);
+            Fruits[6] = 'Blackberry';
+
+            document.write('<ul>');
+            for (var counter = 0; counter <= 6; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+
+        document.write('<h1>Method 03</h1>');
+        CreateArray03();
+
+        function CreateArray04() {
+            var Fruits = new Array(3); //new array created of unlimited length
+
+            Fruits[0] = 'Grapes';
+            Fruits[1] = 'Melon';
+            Fruits[2] = 'Kiwi';
+            Fruits[3] = 'Orange';
+
+            document.write(Fruits);
+            document.write('<br>' + Fruits[1]);
+
+            document.write('<ul>');
+            for (var counter = 0; counter <= 3; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+
+        }
+
+        document.write('<h1>Method 04</h1>');
+        CreateArray04();
+
+        /*function MultiDimArray(){
+            var Students = Array.from(Array(4), () => new Array(2));
+
+            Students[0][0] = 'Nabeel';
+            Students[0][1] = 'Sohail';
+            Students[0][2] = 20;
+
+            Students[1][0] = 'Sohail';
+            Students[1][1] = 'Habib';
+            Students[1][2] = 43;
+
+            Students[2][0] = 'Raheel';
+            Students[2][1] = 'Habib';
+            Students[2][2] = 30;
+
+            Students[3][0] = 'Sakeena';
+            Students[3][1] = 'Sohail';
+            Students[3][2] = 8;
+
+            Students[4][0] = 'Umair';
+            Students[4][1] = 'Sohail';
+            Students[4][2] = 12;
+
+            document.write(Students[1][2]);
+        }
+
+        document.write('<h1>Multi Dim Array</h1>');
+        MultiDimArray();*/
+    </script>
+
+    <h1>Array Methods</h1>
+    <script>
+        function MethodLength() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 87, 90];
+
+            document.write(Fruits.length);
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Length</h2>');
+        MethodLength();
+
+        function MethodSort() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 87, 90];
+            Fruits.sort();
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Sort</h2>');
+        MethodSort();
+
+        function MethodReverse() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 80, 90];
+            Fruits.reverse();
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Reverse</h2>');
+        MethodReverse();
+
+        function MethodSortDesc() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Melon'];
+            Fruits.sort();
+            Fruits.reverse();
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Sort Desc</h2>');
+        MethodSortDesc();
+
+        function MethodPop() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Melon'];
+
+            Fruits.pop();
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Pop (Deletes Last Element of Array)</h2>');
+        MethodPop();
+
+        function MethodPush() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Melon'];
+
+            Fruits.push('Blackberry');
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Push (Inserts an element at the last of an Array)</h2>');
+        MethodPush();
+
+        function MethodShift() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Melon'];
+
+            Fruits.shift();
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Shift (Deletes first Element of Array)</h2>');
+        MethodShift();
+
+        function MethodUnShift() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Melon'];
+
+            Fruits.unshift('Blackberry');
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Unshift (Inserts an element in the first pos of an Array)</h2>');
+        MethodUnShift();
+
+        function MethodConcat() {
+            var Fruits01 = ['Apple', 'Mango', 'Banana'];
+            var Fruits02 = ['Orange', 'Grapes', 'Melon'];
+
+            Fruits02 = Fruits02.concat(Fruits01);
+            var Fruits = Fruits01.concat(Fruits02, Fruits01, Fruits02, 'Strawberry', 'Watermelon');
+
+            document.write('<ul>');
+            for (var counter = 0; counter < Fruits.length; counter++) {
+                document.write('<li>');
+                document.write(Fruits[counter]);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+        document.write('<h2>Concat Array Objects</h2>');
+        MethodConcat();
+
+        function MethodJoin() {
+            var Fruits = ['Apple', 'Mango', 'Banana'];
+
+            var ArrayStr = Fruits.join(' - ');
+            document.write('<h4>' + Fruits + '</h4>');
+            document.write('<h4>' + ArrayStr + '</h4>');
+        }
+        document.write('<h2>Join Array Objects</h2>');
+        MethodJoin();
+
+        function MethodToString() {
+            var Fruits = ['Apple', 'Mango', 'Banana'];
+
+            var ArrayStr = Fruits.toString();
+            document.write('<h4>' + Fruits + '</h4>');
+            document.write('<h4>' + ArrayStr + '</h4>');
+        }
+        document.write('<h2>Convert Array to String(toString)</h2>');
+        MethodToString();
+
+        function CStr(ArrayObj) {
+            var ArrayStr = "";
+
+            //document.write(ArrayObj + '<br>');
+            for (var counter = 0; counter < ArrayObj.length; counter++) {
+                //document.write(ArrayObj[counter] + '<br>');
+                ArrayStr = ArrayStr + ArrayObj[counter] + ',';
+            }
+
+            return ArrayStr;
+        }
+
+        var Fruits = ['Apple', 'Mango', 'Banana'];
+        document.write('<h2>CStr - My Function to Convert Array into String</h2>');
+        document.write(CStr(Fruits));
+
+        function CStrJoin(ArrayObj, Delimiter) {
+            var ArrayStr = "";
+
+            //document.write(ArrayObj + '<br>');
+            for (var counter = 0; counter < ArrayObj.length; counter++) {
+                //document.write(ArrayObj[counter] + '<br>');
+                ArrayStr = ArrayStr + ArrayObj[counter] + Delimiter;
+            }
+
+            return ArrayStr;
+        }
+
+        var Fruits = ['Apple', 'Mango', 'Banana'];
+        document.write('<h2>CStr - My Function to Convert Array into String</h2>');
+        document.write(CStrJoin(Fruits, ' - '));
+
+        function MethodSlice() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Kiwi'];
+
+            document.write('<h4>Before Slice : ' + Fruits + '</h4>');
+
+            var Fruits02 = Fruits.slice(2, 4);
+            var Fruits03 = Fruits.slice(-4, -2);
+
+            document.write('<h4>After Slice : ' + Fruits + '</h4>');
+            document.write('<h4>New Sliced Array : ' + Fruits02 + '</h4>');
+            document.write('<h4>New Sliced Array03 : ' + Fruits03 + '</h4>');
+        }
+        document.write('<h2>Slice Array(slice)</h2>');
+        MethodSlice();
+
+        function MethodSplice_Insert() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Kiwi'];
+
+            document.write('<h4>Before Splice Insert : ' + Fruits + '</h4>');
+
+            Fruits.splice(2, 0, 'Melon', 'Strawberry');
+
+            document.write('<h4>After Splice Insert : ' + Fruits + '</h4>');
+        }
+        document.write('<h2>Splice Insert</h2>');
+        MethodSplice_Insert();
+
+        function MethodSplice_Del() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Kiwi'];
+
+            document.write('<h4>Before Splice Del : ' + Fruits + '</h4>');
+
+            Fruits.splice(2, 2);
+
+            document.write('<h4>After Splice Del : ' + Fruits + '</h4>');
+        }
+        document.write('<h2>Splice Del</h2>');
+        MethodSplice_Del();
+
+        function MethodSplice_InsertDel() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Kiwi'];
+
+            document.write('<h4>Before Splice Insert and Del : ' + Fruits + '</h4>');
+
+            Fruits.splice(2, 3, 'Melon', 'Strawberry');
+
+            document.write('<h4>After Splice Insert and Del : ' + Fruits + '</h4>');
+        }
+        document.write('<h2>Splice Insert and Del</h2>');
+        MethodSplice_InsertDel();
+
+        function MethodIsArray() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Kiwi'];
+            var MyName = 'Nabeel';
+            document.write('type of Fruits = ' + typeof (Fruits) + '<br>');
+            document.write(Array.isArray(Fruits));
+            document.write(Array.isArray(MyName));
+        }
+        document.write('<h2>IsArray</h2>');
+        MethodIsArray();
+
+        function MethodIndexOf() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Grapes', 'Orange', 'Grapes', 'Kiwi'];
+            var FoundIndex = Fruits.indexOf('Apple');
+            document.write(FoundIndex);
+            if (FoundIndex >= 0)
+                document.write('<br>' + Fruits[FoundIndex]);
+        }
+        document.write('<h2>indexOf</h2>');
+        MethodIndexOf();
+
+        function MethodLastIndexOf() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Grapes', 'Orange', 'Grapes', 'Kiwi'];
+            var FoundIndex = Fruits.lastIndexOf('Grapes');
+            document.write(FoundIndex);
+            if (FoundIndex >= 0)
+                document.write('<br>' + Fruits[FoundIndex]);
+        }
+        document.write('<h2>lastIndexOf</h2>');
+        MethodLastIndexOf();
+
+        function MethodValueOf() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Grapes', 'Orange', 'Grapes', 'Kiwi'];
+            document.write(Fruits.valueOf());
+        }
+        document.write('<h2>valueOf</h2>');
+        MethodValueOf();
+
+        function MethodFill() {
+            var Fruits = new Array(20);
+            Fruits.fill('');
+            document.write(Fruits);
+        }
+        document.write('<h2>fill</h2>');
+        MethodFill();
+
+        function MethodIncludes() {
+            var Fruits = ['Apple', 'Mango', 'Banana', 'Grapes', 'Orange', 'Grapes', 'Kiwi'];
+            var Age = [15, 18, 20, 19, 22, 24, 26, 28, 30];
+            document.write(Fruits.includes('orange'));
+            document.write('<br>' + Age.includes(24));
+        }
+        document.write('<h2>Method Includes</h2>');
+        MethodIncludes();
+    </script>
+    <p>
+        some
+        every
+        find
+        findIndex
+        filter
+        forEach
+        map
+    </p>
+    <script>
+        function MethodSome() {
+            var Age = [15, 10, 30, 18, 4, 19, 12, 28, 25];
+            document.write(Age.some(ValidateAge));
+
+            function ValidateAge(StdAge) {
+                if (StdAge >= 35) {
+                    return true;
+                }
+            }
+        }
+        document.write('<h2>Method some</h2>');
+        MethodSome();
+
+        function MethodEvery() {
+            var Age = [15, 10, 30, 18, 14, 19, 12, 28, 25, 100];
+            document.write(Age.every(ValidateAge));
+
+            function ValidateAge(StdAge) {
+                if (StdAge != 100) {
+                    return true;
+                }
+            }
+        }
+        document.write('<h2>Method every</h2>');
+        MethodEvery();
+
+        function MethodFind() {
+            var Age = [15, 10, 30, 18, 14, 19, 12, 28, 25, 100];
+            document.write(Age.find(ValidateAge));
+
+            function ValidateAge(StdAge) {
+                if (StdAge >= 10) {
+                    return true;
+                }
+            }
+        }
+        document.write('<h2>Method find</h2>');
+        MethodFind();
+
+        function MethodFindIndex() {
+            var Age = [15, 10, 30, 18, 14, 19, 12, 28, 25, 100];
+            document.write(Age.findIndex(ValidateAge));
+
+            function ValidateAge(StdAge) {
+                if (StdAge >= 30) {
+                    return true;
+                }
+            }
+        }
+        document.write('<h2>Method findIndex</h2>');
+        MethodFindIndex();
+
+        function MethodFilter() {
+            var Age = [15, 10, 30, 18, 14, 19, 12, 28, 25, 100];
+            var AgeMatched = Age.filter(ValidateAge);
+
+            document.write(AgeMatched);
+            document.write('<br>' + Array.isArray(AgeMatched));
+
+            function ValidateAge(StdAge) {
+                if (StdAge >= 30) {
+                    return true;
+                }
+            }
+        }
+        document.write('<h2>Method filter</h2>');
+        MethodFilter();
+
+        function MethodForEach() {
+            var Age = [15, 10, 30, 18, 14, 19, 12, 28, 25, 100];
+            var Sum = 0;
+
+            document.write('<h3>By Using For Loop</h3>');
+            for (var counter = (Age.length - 1); counter >= 0; counter--) { //loop in reverse like c.
+                document.write('<br>' + counter + ' - ' + Age[counter]);
+            }
+
+            document.write('<h3>By Using forEach Array Method</h3>');
+            Age.forEach(MyLoop);
+
+            function MyLoop(ArrayVal, ArrayIndex) {
+                document.write(ArrayIndex + ' - ' + ArrayVal + '<br>');
+                Sum = Sum + ArrayVal;
+            }
+            document.write('Sum of Array Values = ' + Sum);
+        }
+        document.write('<h2>Method forEach</h2>');
+        MethodForEach();
+    </script>
+
+    <h2>Map Method - Example 01</h2>
+    <p>Printing Square Root of each element of Array.</p>
+    <p id="demo"></p>
+
+    <script>
+        var numbers = [4, 9, 16, 25];
+
+        x = document.getElementById("demo")
+        x.innerHTML = numbers.map(Math.sqrt);
+    </script>
+
+    <h2>Map Method - Example 02</h2>
+    <p>Passing Array Element value to User Defined Function.</p>
+    <p id="demo1"></p>
+
+    <script>
+        var numbers = [4, 9, 16, 25];
+
+        x = document.getElementById("demo1")
+        x.innerHTML = numbers.map(GetPow);
+
+        function GetPow(num) {
+            return Math.pow(num, 2);
+        }
+    </script>
+
+    <h2>Map Method - Example 03</h2>
+    <p>Passing Array Element value to Anonymous Function.</p>
+    <p id="demo2"></p>
+
+    <script>
+        var numbers = [4, 9, 16, 25];
+
+        x = document.getElementById("demo2");
+        x.innerHTML = numbers.map(function (num) {
+            return Math.pow(num, 3);
+        });
+    </script>
+</body>
+
+</html>

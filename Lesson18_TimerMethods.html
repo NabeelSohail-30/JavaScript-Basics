@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Timer Methods</title>
+</head>
+
+<body>
+    <h1>Timer Methods</h1>
+    <ul>
+        <li>setInterval(functionName, Milliseconds)</li>
+        <p>Executes the given function in every given Milliseconds - Returns a number as unique Id</p>
+        <li>clearInterval(setIntervalMethodId)</li>
+        <p>to stop setInterval method executions</p>
+        <li>setTimeout(functionName, Milliseconds)</li>
+        <p>Executes the given function after the given Milliseconds only once - Returns a number as unique Id</p>
+        <li>clearTimeout(setTimeoutMethodId)</li>
+        <p>to cancel setTimeout method execution</p>
+    </ul>
+
+    <h2>setInterval(functionName, Milliseconds)</h2>
+    <div class="bg-warning" style="width:200px; height: 200px;" id="div01"><img src="images/ai.jpg" alt=""
+            style="width:200px; height: 200px;"></div>
+    <br>
+    <button onclick="ChangeMargin(1700);">Click Here</button>
+    <button onclick="AnimateDiv();">Start Animation</button>
+    <button onclick="StopAnimation();">Stop Animation</button>
+    <button onclick="StopAnimation();">Pause Animation</button>
+
+    <script>
+        function ChangeMargin(margin) {
+            var TargetElement = document.querySelector("#div01");
+            TargetElement.style.marginLeft = margin + 'px';
+        }
+
+        var margin = 0;
+        var Direction = 'LTR';
+
+        function AnimateMargin() {
+            var TargetElement = document.querySelector("#div01");
+
+            TargetElement.style.marginLeft = margin + 'px';
+
+            if (margin <= 0) {
+                Direction = 'LTR';
+            }
+
+            if (margin >= 1700) {
+                Direction = 'RTL';
+            }
+
+            if (Direction == 'LTR') {
+                margin = margin + 50;
+            }
+
+
+            if (Direction == 'RTL') {
+                margin = margin - 50;
+            }
+
+            /* if (margin >= 1700) {
+                 margin = 0;
+             }*/
+
+            /*if (margin < 1700) {
+                margin = margin + 50;
+            } else {
+                margin = margin - 50;
+            }*/
+        }
+
+        var SetIntervalId;
+
+        function AnimateDiv() {
+            SetIntervalId = setInterval(AnimateMargin, 300);
+        }
+
+        function StopAnimation() {
+            clearInterval(SetIntervalId);
+            document.querySelector("#div01").style.marginLeft = '0px';
+            margin = 0;
+        }
+    </script>
+
+    <br><br>
+    <div style="background-color: lightgrey;">
+        <h3 id="Time"></h3>
+    </div>
+
+    <script>
+        function AddZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        function GetCurrentTime() {
+            var date = new Date();
+            var hour = AddZero(date.getHours());
+            var min = AddZero(date.getMinutes());
+            var sec = AddZero(date.getSeconds());
+            var CurrentTime = hour + ":" + min + ":" + sec;
+
+            return CurrentTime;
+        }
+
+        var TargetDiv = document.getElementById("Time");
+        TargetDiv.innerText = GetCurrentTime();
+
+        /*function SetCurrentTime() {
+            TargetDiv.innerText = GetCurrentTime();
+        }*/
+
+        setInterval(function () {
+            TargetDiv.innerText = GetCurrentTime();
+        }, 1000);
+    </script>
+</body>
+
+</html>

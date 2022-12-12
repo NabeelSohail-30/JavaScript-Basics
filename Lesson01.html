@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 01 - Output</title>
+</head>
+
+<body>
+    <script>
+        //window.alert('Welcome to JavaScript Lesson 01');
+
+        document.write("<h2>");
+        document.write('Arithmetic Operators Examples');
+        document.write("</h2>");
+
+        var num1, num2;
+        num1 = 10;
+        num2 = 5;
+
+        document.write('Sum of Num1 and Num 2 = ' + (num1 + num2));
+        document.write('<br>Difference of Num1 and Num 2 = ' + (num1 - num2));
+        document.write('<br>Product of Num1 and Num 2 = ' + (num1 * num2));
+        document.write('<br>Quotient of Num1 and Num 2 = ' + (num1 / num2));
+        document.write('<br>Remainder of Num1 divide by Num 2 = ' + (num1 % num2));
+        num1++;
+        document.write('<br>Increment in Num 1 = ' + (num1));
+        document.write('<br>Decrement in Num 2 = ' + (--num2));
+        //document.write('<br>Decrement in Num 2 = ' + (num2));
+
+        document.write("<h2>");
+        document.write('Assignment Operators Examples');
+        document.write("</h2>");
+
+        var a, b, c;
+        a = 8;
+        b = 6;
+
+        c = a;
+        document.write('value of c = ' + c);
+
+        a += c;
+        document.write('<br>value of a = ' + a);
+
+        c -= b;
+        document.write('<br>value of c = ' + c);
+
+        b *= a;
+        document.write('<br>value of b = ' + b);
+
+        a /= c;
+        document.write('<br>value of a = ' + a);
+
+        c %= b;
+        document.write('<br>value of c = ' + c);
+
+        document.write("<h2>");
+        document.write('JavaScript String Operators');
+        document.write("</h2>");
+
+        var MyName = 'Nabeel',
+            FatherName = 'Sohail';
+        document.write(MyName + ' ' + FatherName);
+    </script>
+
+</body>
+
+</html>

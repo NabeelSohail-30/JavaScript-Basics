@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <title>Add New Student Profile</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .wrapper {
+            width: 50%;
+            height: max-content;
+            background-color: whitesmoke;
+            color: black;
+            margin: 150px auto;
+        }
+
+        .std-img {
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            border: 1px solid black;
+            margin-left: 720px;
+            margin-top: 10px;
+        }
+
+        .heading {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .input-heading {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .radio-btn {
+            margin-right: 8px;
+        }
+
+        .add-btn {
+            width: 30%;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            background-color: rgb(0, 0, 194);
+            color: white;
+            font-size: 18px;
+            border-radius: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .add-btn:hover {
+            transition: ease-in-out;
+            background-color: lightgray;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--#include file=Header.asp-->
+    </header>
+
+    <div class="wrapper">
+        <div class="container">
+            <form action="Lesson01.html" method="POST" id="StdDetail">
+
+                <div class="row">
+                    <div class="col text-center mt-2">
+                        <label for="" class="heading">Student's Details</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="std-img">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student GR Number</label>
+                            <br>
+                            <input type="text" class="form-control" name="FormStdGrNum" id="GrNum">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student NIC Number</label>
+                            <br>
+                            <input type="text" class="form-control" name="FormStdNIC">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student Name</label>
+                            <br>
+                            <input type="text" class="form-control" name="FormStdFirstName">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Father Name</label>
+                            <br>
+                            <input type="text" class="form-control" name="FormStdLastName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student Date of Birth</label>
+                            <br>
+                            <input type="date" class="form-control" name="FormStdDob" id="StdDate">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student Nationality</label>
+                            <br>
+                            <select name="FormStdNationalityId" id="Nationality" class="form-control">
+                                <option value="1">Pakistani</option>
+                                <option value="2">British</option>
+                                <option value="3">Kuwaiti</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="mr-2 input-heading">Student Gender</label>
+                            <br>
+                            <input type="radio" name="Gender" id="Male" value="1"> Male
+                            <input type="radio" name="Gender" id="Female" value="2"> Female
+                            <input type="radio" name="Gender" id="Other" value="3"> Other
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="mr-2 input-heading">Student Marital Status</label>
+                            <br>
+                            <input type="radio" name="" id=""> Single
+                            <input type="radio" name="" id=""> Married
+                            <input type="radio" name="" id=""> Other
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student Mobile Number</label>
+                            <br>
+                            <input type="text" class="form-control" name="FormStdMob">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="" class="input-heading">Student Email Address</label>
+                            <br>
+                            <input type="email" class="form-control" name="FormStdEmail" id="Email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group d-flex justify-content-center">
+                            <input type="submit" value="Submit Form using Submit Btn" class="add-btn"
+                                onclick="return SubmitForm_SubmitBtn();">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group d-flex justify-content-center">
+                            <input type="button" value="Submit Form using Button type" class="add-btn"
+                                onclick="return SubmitForm_TypeBtn();">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group d-flex justify-content-center">
+                            <button onclick="return SubmitForm_TypeBtn();" class="add-btn">Submit using Button Tag</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group d-flex justify-content-center">
+                            <button onclick="return SubmitForm_TypeBtn();" class="add-btn" type="submit">Submit using Button type Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group d-flex justify-content-center">
+                            <a href="#" onclick="return SubmitForm_TypeBtn();" class="add-btn">Submit using Anchor Tag</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script/Lesson17.js"></script>
+</body>
+
+</html>

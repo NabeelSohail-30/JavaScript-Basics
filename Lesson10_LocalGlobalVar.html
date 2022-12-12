@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and Global Variables</title>
+</head>
+
+<body>
+    <script>
+        function MyFunction01() {
+            document.write("This is my first Function");
+        }
+
+        function GlobalVar() {
+            document.write('<br>' + GlobalVar01);
+        }
+
+        GlobalVar();
+
+        MyFunction02("Called before creating");
+        var GlobalVar01 = 'Nabeel';
+
+        GlobalVar();
+
+        function MyFunction02(msg) {
+            document.write('<h2>' + msg + '</h2>');
+        }
+
+        function Pi() {
+            return 3.142;
+        }
+
+        function AddNum(num1, num2) {
+            var sum = (num1 + num2);
+            return (sum);
+        }
+
+        MyFunction02(AddNum(20, 78));
+        MyFunction02(AddNum('name', 'nabeel'));
+    </script>
+    <h1>Functions</h1>
+    <script>
+        MyFunction02("This is 2nd Function with Parameter");
+        MyFunction02(Pi());
+        document.write('value of GlobalVar = ' + GlobalVar01);
+        GlobalVar01 = 'Sohail';
+        document.write('<br>value of GlobalVar = ' + GlobalVar01);
+        GlobalVar();
+    </script>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nesciunt soluta voluptatum error quisquam nulla
+        deleniti praesentium, est suscipit animi quam, perspiciatis voluptate aliquam quia labore ipsam necessitatibus,
+        fugit alias.</p>
+    <script>
+        MyFunction01();
+        document.write('<br>' + Pi());
+    </script>
+</body>
+
+</html>

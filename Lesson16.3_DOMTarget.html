@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>DOM Target Element</title>
+</head>
+
+<body>
+    <h1>DOM Target Element</h1>
+
+    <ul>
+        <li>querySelector() - Access single DOM Element like document.getElement</li>
+        <li>querySelectorAll() - Access multiple DOM Elements and returns an Array</li>
+    </ul>
+
+    <h2>Example 01</h2>
+    <p id="eg01">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut corporis tenetur similique error, at saepe
+        magnam quaerat <span>Hello java</span> sed nisi, temporibus consequuntur ullam neque necessitatibus quis! Quasi
+        ab <span>Hello java</span>placeat repudiandae
+        recusandae.
+    </p>
+    <span></span>
+    <p class="text-center"></p>
+
+    <script>
+        var TargetElement = document.querySelector("#eg01"); //same as document.getElementById("eg01")
+        TargetElement.setAttribute("style", "border:1px solid red;");
+
+        var TargetElement02 = document.querySelector(".text-center");
+
+        TargetElement02.innerText = TargetElement.innerText;
+
+        var TargetElementSpan = document.querySelector("#eg01 span");
+        TargetElementSpan.setAttribute("class", "bg-warning");
+    </script>
+
+    <h2>Example 02</h2>
+    <p id="para02">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut corporis tenetur similique error, at
+        saepe
+        magnam quaerat <span>Hello java</span> sed nisi, temporibus consequuntur ullam neque necessitatibus quis! Quasi
+        ab <span>Hello java</span>placeat repudiandae
+        recusandae.
+    </p>
+
+    <script>
+        var TargetElementSpan = document.querySelectorAll("#para02 span");
+
+        for (var Index = 0; Index < TargetElementSpan.length; Index++) {
+            TargetElementSpan[Index].setAttribute("class", "bg-warning");
+        }
+
+        var TargetElementPara = document.querySelectorAll("p");
+
+        for (var Index = 0; Index < TargetElementPara.length; Index++) {
+            TargetElementPara[Index].setAttribute("class", "text-primary");
+        }
+    </script>
+</body>
+
+</html>

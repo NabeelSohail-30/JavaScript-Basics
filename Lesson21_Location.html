@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Location Object</h1>
+    <h3>reload() </h3>
+    <p>reload current page</p>
+    <button id="reload">Reload</button>
+    <script>
+        reload.addEventListener('click', function () {
+            location.reload();
+        });
+    </script>
+
+    <h3>assign(URL) </h3>
+    <p>Set URL address in address bar and open. Also keeps previous page history</p>
+    <button id="AssignUrl">Assign URL and Open</button>
+    <script>
+        AssignUrl.addEventListener('click', function () {
+            location.assign('https://github.com/');
+        });
+    </script>
+
+    <h3>replace(URL) </h3>
+    <p>Set URL address in address bar and open.</p>
+    <button id="replace">replace URL and Open</button>
+    <script>
+        replace.addEventListener('click', function () {
+            location.replace('https://github.com/');
+        });
+    </script>
+
+    <h3>Properties</h3>
+    <script>
+        document.write('Host = ' + location.host);
+        document.write('<br>Host Name= ' + location.hostname);
+        document.write('<br>href= ' + location.href);
+        document.write('<br>origin= ' + location.origin);
+        document.write('<br>path name= ' + location.pathname);
+        document.write('<br>protocol= ' + location.protocol);
+        document.write('<br>port= ' + location.port);
+        document.write('<br>hash= ' + location.hash);
+    </script>
+</body>
+
+</html>

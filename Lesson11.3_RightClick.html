@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>Right Click Event</h1>
+    <button oncontextmenu="MyFunction()">Click me</button>
+
+    <p id="para01"></p>
+
+    <script>
+        function MyFunction() {
+            document.getElementById("para01").innerHTML = "Right Click Event Fired";
+        }
+    </script>
+</body>
+
+</html>

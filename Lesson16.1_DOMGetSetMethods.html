@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" id="css-bs">
+    <title>DOM Get Set Methods</title>
+</head>
+
+<body>
+    <h1>DOM Get and Set Methods</h1>
+    <div>
+        <h2>Method 01 - innerText</h2>
+        <p>Get or Set HTML Elements text which usually is available between HTML Element Tag like h1, p, div etc.</p>
+        <p id="innertext"></p>
+        <script>
+            document.getElementById("innertext").innerText =
+                'Inner Text Inserted through Java Script using innerText Method.';
+        </script>
+    </div>
+    <div>
+        <h2>Method 02 - innerHTML</h2>
+        <p>Get or Set HTML Elements text along with HTML elements which usually is available between HTML Element Tag
+            like h1, p, div etc.</p>
+        <p id="innerhtml"></p>
+        <script>
+            document.getElementById("innerhtml").innerHTML =
+                '<h4 style="border:2px solid black;" onclick="getHTML();">Inner HTML Inserted through Java Script using innerHTML Method.</h4>';
+
+            function getHTML() {
+                window.alert(document.getElementById("innerhtml").innerHTML);
+            }
+        </script>
+    </div>
+    <div>
+        <form action="">
+            <input type="text" name="" placeholder="Name" onfocus="InputDescr();" onblur="HideDesc01();"><span
+                id="inputname"></span>
+            <br>
+            <br>
+            <input type="text" name="" id="" placeholder="Father Name" onmouseover="InputDescFather();"
+                onmouseout="HideDesc02();"><span id="inputfather"></span>
+        </form>
+        <script>
+            function InputDescr() {
+                //window.alert('Event Fired');
+                document.getElementById("inputname").innerHTML = 'Enter Your Name';
+            }
+
+            function InputDescFather() {
+                document.getElementById("inputfather").innerHTML = 'Enter Your Father Name';
+            }
+
+            function HideDesc01() {
+                document.getElementById("inputname").innerHTML = '';
+            }
+
+            function HideDesc02() {
+                document.getElementById("inputfather").innerHTML = '';
+            }
+        </script>
+    </div>
+    <div>
+        <h2>Method 03 - getAttribute</h2>
+        <p>Get HTML Element Attribute value.</p>
+        <p id="attrval" class="m-2">Get Attribute Value...</p>
+        <script>
+            document.getElementById("attrval").innerText = document.getElementById("attrval").getAttribute("class");
+        </script>
+    </div>
+    <div>
+        <h2>Method 04 - getAttributeNode</h2>
+        <p>Get HTML Element Attribute value along with Attribute Name.</p>
+        <p id="attrvalname" class="m-2">Get Attribute Value...</p>
+        <script>
+            //document.getElementById("attrvalname").innerText = (document.getElementById("attrvalname").getAttributeNode("class")).name;
+            var AttrNode = (document.getElementById("attrvalname").getAttributeNode("id"));
+            var GetElement = document.getElementById("attrvalname");
+
+            GetElement.innerText = AttrNode.name + ' = ' + AttrNode.value;
+            //console.log(document.getElementById("attrvalname").getAttributeNode("class"));
+        </script>
+    </div>
+    <div>
+        <h2>Method 05 - attributes</h2>
+        <p>Get and Set(assign) HTML Element All Attribute name and value as an Array.</p>
+        <p id="allattr" class="m-2">Get Attribute Value...</p>
+        <script>
+            var TargetElement = document.getElementById("allattr");
+            var AllAttr = TargetElement.attributes;
+            var AttrRes="";
+
+            //TargetElement.innerText = AllAttr[1].name;
+
+            for (var Index = 0; Index < AllAttr.length; Index++) {
+                //window.alert(Index);
+                AttrRes = AttrRes + '<br>' +  AllAttr[Index].name + ' = ' + AllAttr[Index].value;
+                //TargetElement.innerHTML = TargetElement.innerHTML + '<br>' +  AllAttr[Index].name + ' = ' + AllAttr[Index].value;
+            }
+            TargetElement.innerHTML = AttrRes;
+        </script>
+        <p id="SetAttr" class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab non, repellendus dignissimos, voluptate ea aspernatur iusto at corrupti est debitis ipsam saepe odio error quidem voluptas repudiandae reprehenderit. Explicabo!</p>
+
+        <script>
+            document.getElementById("SetAttr").attributes[1].name = 'class';
+            document.getElementById("SetAttr").attributes[1].value = 'text-center text-danger'; 
+        </script>
+    </div>
+
+    <div>
+        <script>
+            document.write(document.getElementById("css-bs").getAttribute("href"));
+        </script>
+    </div>
+
+    <div>
+        <h2>Method 06 - setAttribute</h2>
+        <p id="AttributeSet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident vitae reiciendis omnis quo, itaque sit sint cum nobis cupiditate atque minus sequi exercitationem sed, porro hic natus quod necessitatibus perspiciatis.</p>
+        <button onclick="AttrSet();">Click Here</button>
+        <script>
+            function AttrSet(){
+                var TargetElement = document.getElementById("AttributeSet");
+
+                TargetElement.setAttribute('style','border:1px solid black;');
+                TargetElement.setAttribute('style','background-color:lightgrey;');
+                TargetElement.setAttribute('class', 'text-center');
+                TargetElement.setAttribute('class', 'text-warning');
+            }
+        </script>
+    </div>
+
+    <div>
+        <h2>Method 07 - removeAttribute</h2>
+        <p id="AttrRemove" class="text-center text-warning">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident vitae reiciendis omnis quo, itaque sit sint cum nobis cupiditate atque minus sequi exercitationem sed, porro hic natus quod necessitatibus perspiciatis.</p>
+        <button onclick="RemoveAttr(document.getElementById('AttrRemove'));">Click Here</button>
+        <script>
+            function RemoveAttr(TargetElement){
+                TargetElement.removeAttribute('class');
+            }
+        </script>
+    </div>
+</body>
+
+</html>

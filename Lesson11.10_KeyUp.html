@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>On Key Up Event</h1>
+    <input type="text" onkeyup="MyFunction()">
+
+    <p id="para01"></p>
+
+    <script>
+        function MyFunction() {
+            document.getElementById("para01").innerHTML = "Key Press Up Fired";
+        }
+    </script>
+</body>
+
+</html>

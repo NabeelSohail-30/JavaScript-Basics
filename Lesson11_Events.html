@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body onload="window.alert('Document has been loaded');" onresize="window.alert('Document Resized');" onscroll="window.alert('Scroll bar click');">
+    <h1 onclick="window.alert('Click Event Fired');">Click Event(onclick)</h1>
+    <p id="para01" onclick="window.alert(document.getElementById('para01').innerHTML);">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ut officiis, eos hic inventore nulla illum,
+        omnis a quod voluptatum tempore quia reiciendis, veritatis quidem dicta quae rem autem! Cumque.
+    </p>
+    <div style="background-color: lightcyan; border: 2px solid black; border-radius: 10px; color: black; font-size: 24px; font-weight: bold;"
+        id="div01" onclick="ChangeText();">
+        Click Here
+    </div>
+
+    <ul>
+        <li>Double Click(ondblclick)</li>
+        <li>Right Click(oncontextmenu)</li>
+        <li>Mouse Hover(onmouseover)</li>
+        <li>Mouse Out(onmouseout)</li>
+        <li>Mouse On(onmouseenter)</li>
+        <li>Mouse Up(onmouseup)</li>
+        <li>Mouse Down(onmousedown)</li>
+        <li>Key Press(onkeypress/onkeydown)</li>
+        <li>Key Up(onkeyup)</li>
+        <li>Document On Load(onload)</li>
+        <li>Document Unload(onunload)</li>
+        <li>Resize(onresize)</li>
+        <li>Scroll Bar(onscroll)</li>
+
+    </ul>
+
+</body>
+
+</html>
+<script>
+    var Div01ClickOnce = false;
+
+    function ChangeText() {
+        if (Div01ClickOnce == false) {
+            Div01ClickOnce = true;
+            document.getElementById('div01').innerHTML = 'Div Text has been changed';
+        } else {
+            Div01ClickOnce = false;
+            document.getElementById('div01').innerHTML = 'Click Here';
+        }
+
+    }
+</script>

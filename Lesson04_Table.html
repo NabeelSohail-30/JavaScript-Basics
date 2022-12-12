@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 04 - Multiplication Table</title>
+</head>
+
+<body>
+    <div id="table"></div>
+    <script>
+        var product, Str = "",
+            counter1 = 2,
+            counter = 0;
+
+        for (; counter1 <= 10; counter1++) {
+            for (counter=0; counter <= 12; counter++) 
+            {
+                product = (counter1 * counter);
+                Str += '<br>' + counter1 + ' * ' + counter + ' = ' + product;
+            }
+            //window.alert(counter1);
+            //window.alert(Str);
+            document.write('<br>' + Str);
+            Str="";
+        }
+        
+    </script>
+</body>
+
+</html>

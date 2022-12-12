@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+</head>
+
+<body>
+    <h1>length</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.length);
+    </script>
+
+    <h1>charAt</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.charAt(5));
+    </script>
+
+    <h1>charCodeAt</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.charCodeAt(3));
+    </script>
+
+    <h1>concat</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.concat(' Habib'));
+    </script>
+
+    <h1>endsWith</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.endsWith('il'));
+    </script>
+
+    <h1>fromCharCode</h1>
+    <script>
+        document.write(String.fromCharCode(65, 66, 67, 68));
+    </script>
+
+    <h1>includes</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.includes('p'));
+    </script>
+
+    <h1>indexOf</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.indexOf('m'));
+    </script>
+
+    <h1>lastIndexOf</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.lastIndexOf('m'));
+    </script>
+
+    <h1>localeCompare</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel Sohail';
+        document.write(MyName.localeCompare('Nabeel'));
+    </script>
+
+    <h1>match</h1>
+    <script>
+        var MyName = 'My Name is Muhammad Nabeel is Sohail';
+        var ReturnMatch = MyName.match('is'); //Need To Understand
+
+        document.write(ReturnMatch.length);
+    </script>
+
+    <h1>repeat</h1>
+    <script>
+        var MyName = 'Nabeel Sohail';
+        document.write(MyName.repeat(5));
+    </script>
+
+    <h1>replace</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.replace('Nabeel', 'Sohail'));
+    </script>
+
+    <h1>search</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.search('Nabeel'));
+    </script>
+
+    <h1>slice</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.slice(11));
+    </script>
+
+    <h1>split</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.split(''));
+        document.write('<br>' + MyName.split(' '));
+    </script>
+
+    <h1>startsWith</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.startsWith('a'));
+        document.write('<br>' + MyName.startsWith('i', 8));
+    </script>
+
+    <h1>substr</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.substr(8));
+        document.write('<br>' + MyName.substr(3, 10));
+    </script>
+
+    <h1>toLocaleLowerCase</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.toLocaleLowerCase());
+    </script>
+
+    <h1>substring</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.substring(8));
+        document.write('<br>' + MyName.substring(1, 8));
+    </script>
+
+    <h1>toLocaleUpperCase</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.toLocaleUpperCase());
+    </script>
+
+    <h1>toLowerCase</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.toLowerCase());
+    </script>
+
+    <h1>toString</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.toString());
+    </script>
+
+    <h1>toUpperCase</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.toUpperCase());
+    </script>
+
+    <h1>trim</h1>
+    <script>
+        var MyName = '     Nabeel   Sohail     ';
+        document.write(MyName.trim()); //see w3 page
+    </script>
+
+    <h1>valueOf</h1>
+    <script>
+        var MyName = 'My Name is Nabeel';
+        document.write(MyName.valueOf());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>History Object</h1>
+
+    <h3>length</h3>
+    <p>returns number of pages in history</p>
+    <script>
+        document.write('Length = ' + history.length);
+    </script>
+
+    <h3>back and forward</h3>
+    <p>moves back and forward pages</p>
+    <button id="back">Backward</button>
+    <button id="forward">Forward</button>
+    <button id="go">Go Back/Forward</button>
+
+    <script>
+        back.addEventListener('click', function(){
+            history.back();
+        })
+
+        forward.addEventListener('click', function(){
+            history.forward();
+        })
+
+        go.addEventListener('click', function(){
+            history.go(-2);
+        })
+    </script>
+</body>
+
+</html>

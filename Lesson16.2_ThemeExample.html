@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/LightMode.css" id="changetheme">
+    <title>Theme Change</title>
+</head>
+
+<body>
+    <button onclick="ChangeGreen();">Green</button>
+    <button onclick="ChangeBlue();">Blue</button>
+    <button onclick="ChangeDark();">Dark Mode</button>
+    <button onclick="ChangeLight();">Light Mode</button>
+
+    <br>
+
+    <button id="SetTheme" onclick="ChangeTheme();">Dark Mode</button>
+
+    <script>
+        function ChangeTheme(){
+            var TargetElement = document.getElementById("changetheme");
+            var TargetElementHref = TargetElement.getAttribute("href");
+
+            if (TargetElementHref == 'css/LightMode.css')
+            {
+                TargetElement.setAttribute('href', 'css/DarkMode.css');
+                document.getElementById("SetTheme").innerText = 'Light Mode';
+            }
+            else if (TargetElementHref == 'css/DarkMode.css')
+            {
+                TargetElement.setAttribute('href', 'css/LightMode.css');
+                document.getElementById("SetTheme").innerText = 'Dark Mode';
+            }
+
+        }
+    </script>
+
+    <h1>Theme Changing Example</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dignissimos nostrum voluptas facilis vel aut,
+        quibusdam voluptatum beatae fuga culpa asperiores doloribus vitae odio reiciendis, explicabo dolores nobis
+        suscipit assumenda!
+        Exercitationem, recusandae porro est labore praesentium magni commodi possimus eligendi blanditiis aut cum,
+        voluptates harum repellat molestias nobis sunt quaerat assumenda. Eos eius animi, earum fuga temporibus adipisci
+        sint exercitationem?
+        Laudantium animi dolorem, iste quae sint suscipit asperiores corrupti ex. Harum quod at dignissimos et, dolore
+        aliquid nam quisquam. Ea dicta quasi architecto enim soluta saepe laborum voluptas doloribus placeat?
+    </p>
+
+    <script>
+        function ChangeGreen() {
+            document.getElementById("changetheme").setAttribute('href', 'css/Green.css');
+        }
+
+        function ChangeBlue() {
+            document.getElementById("changetheme").setAttribute('href', 'css/Blue.css');
+        }
+
+        function ChangeDark() {
+            document.getElementById("changetheme").setAttribute('href', 'css/DarkMode.css');
+        }
+
+        function ChangeLight() {
+            document.getElementById("changetheme").setAttribute('href', 'css/LightMode.css');
+        }
+    </script>
+
+    <form action="">
+        <input type="text" name="" id="input01" onfocus="ChangeBgInput01();" onblur="ChangeBgDefault01();">
+        <br>
+        <br>
+        <input type="text" name="" id="input02" onfocus="ChangeBgInput02();" onblur="ChangeBgDefault02();">
+        <br><br>
+        <input type="text" name="" id="input03" onfocus="ChangeBgInput03();" onblur="ChangeBgDefault03();">
+    </form>
+
+    <script>
+        function ChangeBgInput01() {
+            document.getElementById("input01").setAttribute('style', 'background-color:Yellow;');
+        }
+
+        function ChangeBgInput02() {
+            document.getElementById("input02").setAttribute('style', 'background-color:Yellow;');
+        }
+
+        function ChangeBgInput03() {
+            document.getElementById("input03").setAttribute('style', 'background-color:Yellow;');
+        }
+
+        function ChangeBgDefault01() {
+            document.getElementById("input01").setAttribute('style', '');
+        }
+
+        function ChangeBgDefault02() {
+            document.getElementById("input02").setAttribute('style', '');
+        }
+
+        function ChangeBgDefault03() {
+            document.getElementById("input03").setAttribute('style', '');
+        }
+    </script>
+
+    <h2>Form 02 - Multiple Id</h2>
+    <form action="">
+        <input type="text" name="" id="input04" onfocus="ChangeBg(document.getElementById('input04'));"
+            onblur="ChangeBgDefault(document.getElementById('input04'));">
+        <br>
+        <br>
+        <input type="text" name="" id="input05" onfocus="ChangeBg(document.getElementById('input05'));"
+            onblur="ChangeBgDefault(document.getElementById('input05'));">
+        <br><br>
+        <input type="text" name="" id="input06" onfocus="ChangeBg(document.getElementById('input06'));"
+            onblur="ChangeBgDefault(document.getElementById('input06'));">
+    </form>
+
+    <script>
+        function ChangeBg(TargetElement) {
+            TargetElement.setAttribute('style', 'background-color:Yellow;');
+        }
+
+        function ChangeBgDefault(TargetElement) {
+            TargetElement.setAttribute('style', '');
+        }
+    </script>
+
+    <h2>Form 03 - Method 03 using this keyword</h2>
+    <form action="">
+        <input type="text" name="" id="input07" onfocus="ChangeInputBg(this);" onblur="ChangeBgToDefault(this);" placeholder="Nabeel Sohail" ondblclick="GetInputVal(this);">
+        <button onclick="GetInputVal(document.getElementById('input07'));">Get Input Value</button>
+        <button onclick="SetInputVal(document.getElementById('input07'));">Set Input Value</button>
+        <br>
+        <br>
+        <input type="text" name="" id="input08" onfocus="ChangeInputBg(this);" onblur="ChangeBgToDefault(this);">
+        <br><br>
+        <input type="text" name="" id="input09" onfocus="ChangeInputBg(this);" onblur="ChangeBgToDefault(this);">
+    </form>
+
+    <script>
+        function ChangeInputBg(TargetElement) {
+            console.log(TargetElement);
+            TargetElement.setAttribute('style', 'background-color:Yellow;');
+        }
+
+        function ChangeBgToDefault(TargetElement) {
+            //window.alert(TargetElement);
+            TargetElement.setAttribute('style', '');
+        }
+
+        function GetInputVal(TargetElement){
+            //window.alert('Event Fired');
+            window.alert(TargetElement.getAttribute("placeholder"));
+        }
+
+        function SetInputVal(TargetElement){
+            //window.alert('Event Fired');
+            TargetElement.setAttribute('placeholder', 'Sohail Habib');
+        }
+    </script>
+</body>
+
+</html>

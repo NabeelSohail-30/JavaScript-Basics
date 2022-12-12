@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 08 - Alert</title>
+</head>
+
+<body>
+    <script>
+        window.alert('You have a warning');
+        var Confirm = window.confirm("Do You want to Continue");
+        window.alert(Confirm);
+        var valPrompt = window.prompt("Enter your Name: ");
+        //window.alert(valPrompt);
+    </script>
+    <h1 id="prompt"></h1>
+    <script>
+        document.getElementById("prompt").innerHTML = 'Welcome ' + valPrompt;
+    </script>
+</body>
+
+</html>

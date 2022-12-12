@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Objects</title>
+</head>
+
+<body>
+    <h1>Event Object</h1>
+    <p>Whenever any event is fired, JS passes event object as parameter automatically to the event handler(Function i.e
+        HelloJava). This Event Object contains some properties and methods.</p>
+    <div id="div01"></div>
+    <button id="btn1" onclick="HelloJava(event);">Click Here to call Event Object</button>
+    <script>
+        function HelloJava(EventObj) {
+            //document.getElementById("div01").innerText = EventObj;
+            var EventObjMP = "";
+            //document.getElementById("div01").innerText = 'Welcome to JavaScript!';
+            for (const key in EventObj.target) {
+                EventObjMP = EventObjMP + key + " = " + EventObj.target[key] + '<br>';
+            }
+
+            document.getElementById("div01").innerHTML = EventObjMP;
+        }
+    </script>
+
+    <br><br>
+    <h2>Get Event Object properties</h2>
+    <button style="width: 150px; height: 80px;" id="btn02" onmousemove="GetEventObjProp(event);" type="menu">Get Event
+        Object properties</button>
+    <div style="width: 50%; height: 200px; border: 2px dashed black; margin: auto;" id="div02"></div>
+    <script>
+        function GetEventObjProp(EventObj) {
+            var EventPropStr = "";
+            EventPropStr = 'Event Type = ' + EventObj.type + '<br>';
+            EventPropStr += 'X = ' + EventObj.clientX + '<br>';
+            EventPropStr += 'Y = ' + EventObj.clientY + '<br>';
+            EventPropStr += 'Target Type = ' + EventObj.target.type + '<br>'; //Target Prop Type
+            EventPropStr += 'Target Tag Name = ' + EventObj.target.tagName + '<br>';
+
+            document.getElementById("div02").innerHTML = EventPropStr;
+        }
+    </script>
+
+    <br><br>
+    <h2>Get Event Object parameter with User defined parameter</h2>
+    <button style="width: 150px; height: 80px;" id="btn03" onmousemove="GetEventObjPara('java', 'hello', event);">Get
+        Event
+        Object parameter</button>
+    <div style="width: 50%; height: 200px; border: 2px dashed black; margin: auto;" id="div03"></div>
+    <script>
+        function GetEventObjPara(b, a, EventObj) {
+            var EventPropStr = "";
+            EventPropStr += 'parameter a = ' + a + '<br>';
+            EventPropStr += 'parameter b = ' + b + '<br>';
+            EventPropStr += 'Event Type = ' + EventObj.type + '<br>';
+            EventPropStr += 'X = ' + EventObj.clientX + '<br>';
+            EventPropStr += 'Y = ' + EventObj.clientY + '<br>';
+            EventPropStr += 'Target Type = ' + EventObj.target.type + '<br>'; //Target Prop Type
+            EventPropStr += 'Target Tag Name = ' + EventObj.target.tagName + '<br>';
+
+            document.getElementById("div03").innerHTML = EventPropStr;
+        }
+    </script>
+</body>
+
+
+</html>

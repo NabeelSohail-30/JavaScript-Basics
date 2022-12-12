@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>On Mouse Out Event</h1>
+    <button onmouseout="MyFunction()">Click me</button>
+
+    <p id="para01"></p>
+
+    <script>
+        function MyFunction() {
+            document.getElementById("para01").innerHTML = "Mouse Out Event Fired";
+        }
+    </script>
+</body>
+
+</html>

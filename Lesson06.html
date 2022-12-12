@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 06 - innerText</title>
+</head>
+
+<body>
+    <h1>innerText vs innerHTML</h1>
+    <h1 id="heading01">This is Heading</h1>
+    <h2 id="heading02"></h2>
+    <p id="para01" class="para">This is <span style="font-weight: bold; color: blueviolet; border: 2px solid black;">Paragraph</span></p>
+    <p id="para02" class="para"></p>
+    <div id="div01">This is div</div>
+    <span id="span01">This is span</span>
+    <script>
+        window.alert('innerHTML = ' + document.getElementById("para01").innerHTML);
+        window.alert('innerText = ' + document.getElementById("para01").innerText);
+        //document.getElementById("para01").innerHTML="New Value for Para 01 by innerHTML";
+        //window.alert('innerHTML = ' + document.getElementById("para01").innerHTML);
+        document.getElementById("para01").innerText="New Value for Para 01 by innerText";
+        window.alert('innerText = ' + document.getElementById("para01").innerText);
+    </script>
+</body>
+
+</html>

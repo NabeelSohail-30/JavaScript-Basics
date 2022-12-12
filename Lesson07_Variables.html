@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 07 - variables</title>
+</head>
+
+<body>
+    <script>
+        var myname = "Nabeel";
+        myname = "Sohail";
+        var myname = "Umair";
+
+        let name01 = "Nabeel";
+        name01 = "Sohail";
+        //let name01 = "Umair";   //cannot redeclare the same variable again.
+
+        const name02 = "Nabeel";
+        //name02 = "Sohail";
+        //const name02 = "Umair";
+
+        var Str = "Name",   //string
+            Num1 = 10,   //numeric
+            Found = true,   //boolean
+            cars = ["Vitz", "Honda", "Prado"],  //array
+            students = {
+                firstName: "Nabeel",
+                lastName: "Sohail",
+                age: 20
+            },  //object
+            varNull = null,     //null
+            var01;      //undefined
+
+        document.write(Str + ' - ' + typeof Str);
+        document.write('<br>' + Num1 + ' - ' + typeof Num1);
+        document.write('<br>' + Found + ' - ' + typeof Found);
+        document.write('<br>' + cars + ' - ' + typeof cars);
+        document.write('<br>' + students + ' - ' + typeof students);
+        document.write('<br>' + varNull + ' - ' + typeof varNull);
+        document.write('<br>' + var01 + ' - ' + typeof var01);
+    </script>
+</body>
+
+</html>

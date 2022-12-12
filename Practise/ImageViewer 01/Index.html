@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Image Viewer</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 800px;
+            display: flex;
+            margin: 0px auto;
+        }
+
+        .img-nav img {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .container-fluid {
+            margin: 90px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <div class="img-nav">
+                    <a href="#" onclick="PreImg();"><img src="back.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div class="img-box">
+                    <a href="#"><img src="Images/Img1.jpeg" alt="" id="image"></a>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="img-nav">
+                    <a href="#" onclick="NextImg();"><img src="next.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function NextImg(){
+            var TargetElement = document.getElementById("image");
+            var TargetImgSrc = TargetElement.getAttribute("src");
+
+            if (TargetImgSrc == 'Images/Img1.jpeg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img2.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img2.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img3.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img3.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img4.png');
+            }
+            else if (TargetImgSrc == 'Images/Img4.png')
+            {
+                TargetElement.setAttribute('src', 'Images/Img5.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img5.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img6.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img6.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img7.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img7.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img1.jpeg');
+            }
+        }
+
+        function PreImg(){
+            var TargetElement = document.getElementById("image");
+            var TargetImgSrc = TargetElement.getAttribute("src");
+
+            if (TargetImgSrc == 'Images/Img1.jpeg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img7.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img2.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img1.jpeg');
+            }
+            else if (TargetImgSrc == 'Images/Img3.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img2.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img4.png')
+            {
+                TargetElement.setAttribute('src', 'Images/Img3.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img5.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img4.png');
+            }
+            else if (TargetImgSrc == 'Images/Img6.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img5.jpg');
+            }
+            else if (TargetImgSrc == 'Images/Img7.jpg')
+            {
+                TargetElement.setAttribute('src', 'Images/Img6.jpg');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>MainPage</title>
+    <script>
+        document.write(document);
+        console.log(document);
+        document.write('<br><br><br><br><br>');
+    </script>
+</head>
+
+<body>
+    <h1 id="mainhead" class="text-secondary text-center" onclick="ChangeTitle();">
+        <img src="" alt="">
+        DOM (Document Object Module)
+    </h1>
+    <h3>When a web page is loaded, the browser creates a Document Object Model of the page.</h3>
+    <h2>DOM Methods and Properties</h2>
+    <ul>
+        <li>
+            document.all
+            <br>
+            <script>
+                document.write(document.all[12]);
+                document.all[12].innerHTML = 'Text Changed by .all Method';
+                console.log(document.all[12]);
+            </script>
+        </li>
+        <li>document.documentElement (Returns All Elements)</li>
+        <li>document.head (Returns Head Objects)</li>
+        <li>document.title (Get/Set Doc Title)
+            <script>
+                function ChangeTitle() {
+                    document.title = "Doc Title Changed By JS using document.title Method on Main Header Click";
+                }
+            </script>
+        </li>
+        <li>
+            document.body (Returns HTML Body Objects)
+        </li>
+        <li>document.images (Returns all Images Object in Array)
+            <script>
+                document.write(document.images[0]);
+                for (const iterator of document.images) {
+                    document.write(iterator + '<br>');
+                }
+            </script>
+        </li>
+        <li>
+            document.links (Returns all Links Object in Array)
+        </li>
+        <li>
+            document.forms (Returns all Form Object in Array)
+        </li>
+        <li>
+            document.doctype (Returns doctype)
+        </li>
+        <li>
+            document.URL (Returns Document URL)
+        </li>
+        <li>
+            document.baseURI (Returns Document URL)
+        </li>
+        <li>
+            document.domain (Returns Host Name/Domain Name)
+        </li>
+        <li>document.getElementById("Id Name") (Returns Single HTML Element)</li>
+        <li>document.getElementByClassName("Class Name") (Returns Array of HTML Element)</li>
+        <li>document.getElementByTagName("Tag Name") (Returns Array of HTML Element)</li>
+
+    </ul>
+
+    <table width="100%" cellpadding="0px" cellspacing="0px" bgcolor="#E8E8E8" class="">
+        <tr bgcolor="#E8E8E8" height="20px">
+            <td>
+                <hr color="blue" noshade size="5px">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <table cellpadding="3px" cellspacing="3px" bgcolor="#E8E8E8">
+                                <tr bgcolor="#E8E8E8">
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">Campus Guide</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">|</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">Online Apply</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">|</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">News & Update</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">|</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">Careers</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">|</font>
+                                    </td>
+                                    <td align="center">
+                                        <font color="#333333" face="arial" size="2px">SSCA Cloud</font>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td align="right">
+                            <font color="#333333" face="arial" size="2px">Webmail Login</font>
+                        </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%">
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td>
+            <td align="left"><img src="images/logo.png"></td>
+            <td align="right">For Inquiry Please Call<br>
+                <font size="5px"><b>(+92)-21-36689462, (+92)-21-36608876</b></font>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+    </table>
+
+    <table width="100%" bgcolor="#1F1F1F" cellpadding="0px" cellspacing="0px" border="1px">
+        <tr height="60px">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">Home</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">About SSCA</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">Academics</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">Admissions</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">Student's Life</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">News & Media</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">SSCA Cloud</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">Contact Us</font>
+            </td>
+            <td align="center" bordercolor="#313131">
+                <font color="white" face="arial black" size="3px">Support</font>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+
+    <table align="center">
+        <tr>
+            <td align="center"><img src="images/banner.jpg" width="100%"></td>
+        </tr>
+    </table>
+
+    <table align="center" width="75%">
+        <tr>
+            <td width="25%"><img src="images/img1.png"></td>
+            <td width="25%"><img src="images/img2.png"></td>
+            <td width="25%"><img src="images/img3.png"></td>
+        </tr>
+
+        <tr>
+            <td width="25%" align="center">
+                <h3 class="bg-warning text-primary" id="head02">Play Group / Montessori</h3>
+                We offer early childhood education system to children ranging from the ages three to six in the form of
+                Play Group and Kindergarten.
+            </td>
+            <td width="25%" align="center">
+                <h3 class="bg-warning text-primary" id="head02">Primary / Cambridge Primary</h3>
+                Sir Syed Children's Academy Primary and Cambridge Primary programme consists of modern educational
+                standards.
+            </td>
+            <td width="25%" align="center">
+                <h3 class="bg-warning text-primary" id="head03">Matric System / O' Level</h3>
+                Sir Syed Children's Academy Secondary (Matric System) programme consists of modern educational
+                standards.
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table align="center" width="80%" cellpadding="2px" cellspacing="2px">
+
+        <tr>
+
+            <td align="left" width="50%" bordercolor="#999999">
+                <h2 align="left">Our Aim & Objectives</h2>
+                <img src="images/img4.jpg" align="left">
+                We work hard to ensure that everyone in our school family has the best possible chance to do as well as
+                they can. We want every child to make the most of his opportunities for learning and to develop good
+                social skills, as key stepping stones for his future.
+                <br>
+                We aim to make every child's time at our school a happy and an enjoyable experience that will lay good
+                foundations not only for higher studies, but will also give them the skills, confidence and feeling of
+                self worth that will stay with them throughout his life, to enable them to become a good citizen and a
+                caring adult.
+            </td>
+
+            <td align="center" width="30%">
+                <h2 align="center">We Offer</h2>
+                <table align="center">
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Early childhood education from age 2 years.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Montessori wraparound care.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Primary education from age 5 years.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Cambridge Primary from Level-1 to Level-5</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Cambridge Primary Checkpoint</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Secondary Education till Matric</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Separate boys and girls campuses.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Before and after school care.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Strong commitment to inclusion.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Extracurricular and co curricular activities.</td>
+                    </tr>
+                    <tr>
+                        <td width="10%" align="center"><img src="images/icon.png" width="20px" height="25px"></td>
+                        <td>Parents education and workshops.</td>
+                    </tr>
+                </table>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br><br>
+    <br><br>
+
+    <table align="center">
+        <tr>
+            <td align="center"><img src="images/footer.png" width="100%"></td>
+        </tr>
+    </table>
+
+    <table bgcolor="#515151">
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="center">
+                <marquee behavior="scroll" height="30px">
+                    <font color="white" size="3px">
+                        <img src="images/marquee.png">
+                        Parents are requested to subscribe to school's YouTube channel to attend our digital classes for
+                        the new session 2020-21 which will be starting from 22nd June, 2020, the details of which will
+                        be posted soon.
+                        <img src="images/marquee.png">
+                        Dear Parents, please visit our website (www.sirsyedacademy.edu.pk) and our facebook page on
+                        daily basis for latest news and updates.
+                        <img src="images/marquee.png">
+                        Now Introducing SSCA ECE (Early Childhood Education) Chapter at Nazimabad (behind Sir Syed
+                        Girl's College)
+                        <img src="images/marquee.png">
+                        Dear Parents, Admissions Open for the Session of 2020- 21
+                        <img src="images/marquee.png">
+                        We congratulate MARYAM RAFIQ on scoring 92.12% (A+ Grade) in Class � X also top scorer of SSCA
+                        from Girls Campus II
+                        <img src="images/marquee.png">
+                        Shinning Stars of SSCA Class - X, Session 2017 � 18 1st Position Kaif-ul-Wara 93.02%, 2nd Uswa
+                        Khan 93%, and 3rd Position Hamna Naz 92.12%
+                        <img src="images/marquee.png">
+                        Shinning Stars of SSCA Class - IX, Session 2016 � 17 1st Position Hamna Naz 93.17%, 2nd
+                        Kaifulwara Khan 93.1%, and 3rd Position Ifra Jawed 92.9%
+                    </font>
+                </marquee>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <table width="100%" bgcolor="#1F1F1F" align="center">
+        <tr height="80px">
+            <td align="Center">
+                <font color="white" face="calibri" size="3px">
+                    Copyright &copy; 2020, SSCA All Rights Reserved <br> Powered By: Spectrum Tech & IT Comany<br><br>
+                </font>
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+    for (const iterator of document.images) {
+        document.write(iterator.currentSrc + '<br>');
+    }
+</script>
+
+</html>

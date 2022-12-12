@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Image SlideShow</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .img-box {
+            max-width: 2000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .img-box img {
+            width: 90%;
+            height: 90vh;
+            display: flex;
+            margin: auto;
+        }
+
+        .container-fluid {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-secondary mb-1 mt-2" onclick="ImgSlideshow();">Start Slide Show</button>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="img-box">
+                    <img src="Images/Img1.jpeg" alt="" id="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var ImageList = ['Img1.jpeg', 'Img2.jpg', 'Img3.jpg', 'Img4.png', 'Img5.jpg', 'Img6.jpg', 'Img7.jpg'];
+        var Index = 0;
+        var AnimateImgId;
+        var TargetElement = document.getElementById("image");
+        var TargetImgSrc = TargetElement.getAttribute("src");
+        var ImgListLength = ImageList.length - 1;
+
+        //console.log('Images/' + ImageList[5]);
+
+        function ImgSlides() {
+
+
+            if (Index < (ImgListLength)) {
+                AnimateImgId = setInterval(RotateToRight, 100);
+                Index++;
+                //console.log(Index);
+                TargetElement.setAttribute('src', ('Images/' + ImageList[Index]));
+                if (Index == ImgListLength) {
+                    Index = 0;
+                }
+            }
+        }
+
+        var opacity = 100;
+
+        var TargetImg = document.getElementById("image");
+
+        function RotateToRight() {
+            clearInterval(ImgSlideshowTimeId);
+            TargetImg.style.opacity = (opacity / 100);
+            if (opacity > 0) {
+                opacity = opacity - 5;
+            } else {
+                clearInterval(AnimateImgId);
+                opacity = 100;
+                TargetElement.setAttribute('src', ('Images/' + ImageList[Index+1]));
+                TargetImg.style.opacity = (opacity / 100);
+                ImgSlideshowTimeId = setInterval(ImgSlides, 800);
+            }
+
+        }
+
+        var ImgSlideshowTimeId;
+
+        function ImgSlideshow() {
+            ImgSlideshowTimeId = setInterval(ImgSlides, 800);
+        }
+
+        function NextImg() {
+            var TargetElement = document.getElementById("image");
+            var TargetImgSrc = TargetElement.getAttribute("src");
+
+            if (Index < (ImageList.length - 1)) {
+                Index++;
+                console.log(Index);
+                TargetElement.setAttribute('src', ('Images/' + ImageList[Index]));
+            }
+        }
+
+        function PreImg() {
+            var TargetElement = document.getElementById("image");
+            var TargetImgSrc = TargetElement.getAttribute("src");
+
+            if (Index > 0) {
+                Index--;
+                console.log(Index);
+                TargetElement.setAttribute('src', ('Images/' + ImageList[Index]));
+            }
+        }
+    </script>
+</body>
+
+</html>

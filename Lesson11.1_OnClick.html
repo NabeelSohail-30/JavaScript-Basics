@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>On Click Event</h1>
+    <button onclick="MyFunction()">Click me</button>
+
+    <form action="Lesson11_Events.html">
+        <label for="">Label 01</label>
+        <input type="text" name="" id="">
+        <input type="submit" onclick="return FormSubmit()">
+    </form>
+
+    <a href="#" onclick="return FormSubmit()">Click Here to Search</a>
+    <p id="para01"></p>
+
+    <script>
+        function MyFunction() {
+            document.getElementById("para01").innerHTML = "Click Event Fired";
+        }
+
+        function FormSubmit() {
+            var ConfirmVal = window.confirm('Are you Sure to Submit');
+
+            if (ConfirmVal==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Event Bubbling (child to parent)</h1>
+    <p>If any event fires on child element, respectively it will fire the same event to its parent elements</p>
+    <div style="width: 50%; height: 500px; border: 5px dashed black; margin: auto; text-align: center;" id="div01"
+        onclick="ChangeBorder1(this);">
+        <h3>This is Div 01</h3>
+        <div style="width: 75%; height: 75%; border: 5px dotted black; margin: auto;" id="div02"
+            onclick="ChangeBorder2(this);">
+            <h3>This is Div 02</h3>
+            <div style="width: 75%; height: 75%; border: 5px solid black; margin: auto;" id="div03"
+                onclick="ChangeBorder3(this);">
+                <h3>This is Div 03</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ChangeBorder1(TargetElement) {
+            TargetElement.style.borderColor = 'red';
+        }
+
+        function ChangeBorder2(TargetElement) {
+            TargetElement.style.borderColor = 'blue';
+        }
+
+        function ChangeBorder3(TargetElement) {
+            TargetElement.style.borderColor = 'green';
+        }
+    </script>
+
+    <h1>Cancel Event Bubbling (child to parent)</h1>
+    <div style="width: 50%; height: 500px; border: 5px dashed black; margin: auto; text-align: center;" id="cdiv01"
+        onclick="cChangeBorder1(this, event);">
+        <h3>This is Div 01</h3>
+        <div style="width: 75%; height: 75%; border: 5px dotted black; margin: auto;" id="cdiv02"
+            onclick="cChangeBorder2(this, event);">
+            <h3>This is Div 02</h3>
+            <div style="width: 75%; height: 75%; border: 5px solid black; margin: auto;" id="cdiv03"
+                onclick="cChangeBorder3(this, event);">
+                <h3>This is Div 03</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cChangeBorder1(TargetElement, EventObj) {
+            TargetElement.style.borderColor = 'red';
+            EventObj.cancelBubble = true;
+        }
+
+        function cChangeBorder2(TargetElement, EventObj) {
+            TargetElement.style.borderColor = 'blue';
+            EventObj.cancelBubble = true;
+        }
+
+        function cChangeBorder3(TargetElement, EventObj) {
+            TargetElement.style.borderColor = 'green';
+            //EventObj.cancelBubble = true; or
+            EventObj.stopPropagation();
+        }
+    </script>
+
+    
+</body>
+
+</html>
